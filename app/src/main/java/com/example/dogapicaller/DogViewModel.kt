@@ -25,7 +25,7 @@ class DogViewModel : ViewModel() {
 
             try {
                 val response = RetroFitInstance.api.getRandomDog()
-                _dog.value = response.result.firstOrNull()
+                _dog.value = response.firstOrNull()
             } catch (e: Exception) {
                 _error.value = "Failed to load dog: ${e.message}"
             }

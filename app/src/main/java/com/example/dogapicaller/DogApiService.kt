@@ -5,11 +5,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
 interface DogApiService {
-    @GET("search/images/v1")
-    suspend fun getRandomDog(): RandomDogResponse
+    @GET("v1/images/search")
+    suspend fun getRandomDog(): List<Dog>
 }
-
-data class RandomDogResponse(val result: List<Dog>)
 
 object RetroFitInstance {
     private val retrofit = Retrofit.Builder()
